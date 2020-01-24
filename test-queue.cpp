@@ -46,14 +46,13 @@ void Test1() {
 
     result &= (q->isFull());
     result &= (!(q->isEmpty()));
-
+    printf("%d\n", result);
     delete q;
     delete o;
 }
 
 // test enqueue more elements than allocated size
 void Test2() {
-    bool result = true;
     Queue* q = new Queue(5);
 
     Object* o = new Object();
@@ -71,7 +70,6 @@ void Test2() {
 
 // test dequeue empty queue
 void Test3() {
-    bool result = true;
     Queue* q = new Queue(5);
 
     q->dequeue();// expect program terminated
@@ -81,7 +79,6 @@ void Test3() {
 
 // test peek empty queue
 void Test4() {
-    bool result = true;
     Queue* q = new Queue(5);
 
     q->peek();// expect program terminated
@@ -91,7 +88,7 @@ void Test4() {
 
 // test equal and hash
 void Test5() {
-    bool result = true;
+    result = true;
     Queue* q1 = new Queue(5);
     Queue* q2 = new Queue(4);
 
@@ -102,7 +99,9 @@ void Test5() {
 
     result &= (q1->equals(q2));
     result &= (q1->hash() == q2->hash());
-
+    
+    printf("%d\n", result);
+    
     delete q1;
     delete q2;
     delete o;

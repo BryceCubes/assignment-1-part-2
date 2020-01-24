@@ -2,7 +2,6 @@
 #pragma once
 
 #include "object.h"
-#include <stdlib.h>
 
 class Queue : public Object {
 public:

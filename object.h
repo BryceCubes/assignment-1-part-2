@@ -1,6 +1,8 @@
 //lang::CwC
 #pragma once
 
+#include <stdlib.h>
+
 class Object {
 public:
 
