@@ -13,7 +13,7 @@ public:
 	// Constructs Queue of the given size
 	Queue(size_t size) : Object() {}
 
-	// Deconstructor
+	// Destructor
 	~Queue() {}
 
 	// Determines if this Queue is equal to the given queue
