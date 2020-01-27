@@ -6,9 +6,9 @@
 void Test1() {
     bool result = true;
     Queue* q = new Queue(5);
-    // test size and current size
+    // test allocated size and current size
     result &= (q->current_size() == 0);
-    result &= (q->size() == 5);
+    result &= (q->allocated_size() == 5);
 
     Object* o = new Object();
     Object* o2 = new Object();
@@ -17,17 +17,17 @@ void Test1() {
     q->enqueue(o);
     q->enqueue(o2);
     result &= (q->current_size() == 1);
-    result &= (q->size() == 5);
+    result &= (q->allocated_size() == 5);
 
     // test peek
     result &= (q->peek()->equals(o));
     result &= (q->current_size() == 2);
-    result &= (q->size() == 5);
+    result &= (q->allocated_size() == 5);
 
     // test dequeue
     result &= (q->dequeue()->equals(o));
     result &= (q->current_size() == 1);
-    result &= (q->size() == 5);
+    result &= (q->allocated_size() == 5);
 
     // test clear
     q->clear();
@@ -42,7 +42,7 @@ void Test1() {
     q->enqueue(o);
 
     result &= (q->current_size() == 5);
-    result &= (q->size() == 5);
+    result &= (q->allocated_size() == 5);
 
     result &= (q->isFull());
     result &= (!(q->isEmpty()));
