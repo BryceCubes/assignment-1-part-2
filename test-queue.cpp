@@ -5,13 +5,13 @@
 // test basic behaviors
 void Test1() {
     bool result = true;
-    Queue* q = new Queue(5);
+    StrQueue* q = new StrQueue(5);
     // test allocated size and current size
     result &= (q->current_size() == 0);
     result &= (q->allocated_size() == 5);
 
-    Object* o = new Object();
-    Object* o2 = new Object();
+    String* o = new String("hello");
+    String* o2 = new String("world");
 
     // test enqueue
     q->enqueue(o);
@@ -54,7 +54,7 @@ void Test1() {
 // test enqueue more elements than allocated size
 void Test2() {
     Queue* q = new Queue(5);
-
+    
     Object* o = new Object();
 
     q->enqueue(o);
@@ -88,11 +88,11 @@ void Test4() {
 
 // test equal and hash
 void Test5() {
-    result = true;
-    Queue* q1 = new Queue(5);
-    Queue* q2 = new Queue(4);
-
-    Object* o = new Object();
+    bool result = true;
+    StrQueue* q1 = new StrQueue(5);
+    StrQueue* q2 = new StrQueue(4);
+    
+    String* o = new String("hello");
 
     q1->enqueue(o);
     q2->enqueue(o);

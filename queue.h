@@ -13,7 +13,7 @@ public:
 	Queue(size_t size) : Object() {}
 
 	// Destructor
-	~Queue() {}
+	virtual ~Queue() {}
 
 	// Determines if this Queue is equal to the given queue
 	virtual bool equals(Object* that) {}
@@ -45,3 +45,23 @@ public:
 	// Clears the queue of all elements
 	virtual void clear() {}
 };
+
+class StrQueue: Queue {
+  // Default constructor
+	StrQueue() : Queue() {}
+
+	// Constructs Queue of the given size
+	StrQueue(size_t size) : Queue(size) {}
+
+	// Destructor
+	virtual ~StrQueue() {}
+ 
+  // Adds the given String to the Queue
+	virtual void enqueue(String* o) {}
+  
+  // Gets and removes the next String from the Queue
+	virtual String* dequeue() {}
+  
+  // Gets the next String from the Queue without removing it
+	virtual String* peek() {}
+}
