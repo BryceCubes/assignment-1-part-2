@@ -16,7 +16,7 @@ void Test1() {
     // test enqueue
     q->enqueue(o);
     q->enqueue(o2);
-    result &= (q->current_size() == 1);
+    result &= (q->current_size() == 2);
     result &= (q->allocated_size() == 5);
 
     // test peek
