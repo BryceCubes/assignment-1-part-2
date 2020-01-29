@@ -46,7 +46,7 @@ public:
 	virtual void clear() {}
 };
 
-class StrQueue: Queue {
+class StrQueue: public Queue {
   // Default constructor
 	StrQueue() : Queue() {}
 
@@ -64,4 +64,4 @@ class StrQueue: Queue {
   
   // Gets the next String from the Queue without removing it
 	virtual String* peek() {}
-}
+};

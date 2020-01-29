@@ -1,6 +1,7 @@
 //lang::CwC
 
 #include "queue.h"
+#include <stdio.h>
 
 // test basic behaviors
 void Test1() {
