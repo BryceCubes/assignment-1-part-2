@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 2.8.2)
 
 # specify the C++ standard
-set(CMAKE_CXX_STANDARD 11)
+add_definitions(-std=c++11)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
 
 find_package(Threads REQUIRED)
