@@ -2,6 +2,7 @@
 
 #include "queue.h"
 #include <stdio.h>
+#include <gtest/gtest.h>
 
 // test basic behaviors
 void Test1() {
@@ -63,7 +64,7 @@ void Test2() {
     q->enqueue(o);
     q->enqueue(o);
     q->enqueue(o);
-    q->enqueue(o); // expect program terminated
+    ASSERT_EXIT(q->enqueue(o), ::testing::ExitedWithCode(1));
 
     delete q;
     delete o;
@@ -72,8 +73,8 @@ void Test2() {
 // test dequeue empty queue
 void Test3() {
     Queue* q = new Queue(5);
-
-    q->dequeue();// expect program terminated
+    
+    ASSERT_EXIT(q->dequeue(), ::testing::ExitedWithCode(1));
 
     delete q;
 }
@@ -81,8 +82,8 @@ void Test3() {
 // test peek empty queue
 void Test4() {
     Queue* q = new Queue(5);
-
-    q->peek();// expect program terminated
+    
+    ASSERT_EXIT(q->peek(), ::testing::ExitedWithCode(1));
 
     delete q;
 }
